@@ -38,7 +38,6 @@ router.post('/post/add', async (req,res) => {
   } else {
     res.send(`Could not add new blog post ${title}`).status(409);
   }
-
 });
 
 router.put('/post/update/:post_id?', async (req, res) => {

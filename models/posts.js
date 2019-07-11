@@ -42,14 +42,16 @@ class Posts {
 
         try {
             let response = await db.result(query);
+            console.log('model', response)
             return response;
         } catch (err) {
+            // console.log('error : ', err);
             return err.message;
         }
     }
 
     static async updateEntry(id, column, content) {
-        const query = `UPDATE posts SET '${column}' = '${content}' WHERE id = '${id}'`;
+        const query = `UPDATE posts SET '${column}' = '${content}' WHERE id = ${id}`;
         
         try {
             const response = await db.result(query);
